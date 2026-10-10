@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView, Button, Alert } from "react-native";
 
 export default function App() {
   return (
@@ -28,6 +28,14 @@ export default function App() {
             source={{ uri: `https://picsum.photos/200?random=${i}` }}
           />
         ))}
+      </View>
+
+      {/* Alert Button */}
+      <View style={styles.alertButton}>
+        <Button
+          title="Alert"
+          onPress={() => Alert.alert("Alert Button pressed")}
+        />
       </View>
     </ScrollView>
   );
@@ -72,5 +80,9 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 8,
     marginBottom: 10,
+  },
+  alertButton: {
+    marginTop: 40,
+    marginBottom: 60,
   },
 });
